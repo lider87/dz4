@@ -23,24 +23,19 @@ h1,
 .menu {
 	list-style-type: none;
 }
-ul li a:hover {
-	font-size: 23px;
+ul.menu a:hover {
+	font-size: 19px;
 	color: #1cac78;
 }
-.first a,
-.first, 
-.catalog a,
-.catalog, 
-.contacts a,
-.contacts {
+ul.menu a {
+	font-weight: normal;
 	font-size: 18px;
 	color: #7d7f7d;
 	text-decoration: none;
 }
-.first1,
-.catalog1,
-.contacts1 {
-	font-size: 20px;
+ul.menu li {
+	font-size: 18px;
+	font-weight: bold;
 	color: #7d7f7d;
 }
 .product h2 {
@@ -63,7 +58,7 @@ ul li a:hover {
 	color: #707070;
 	font-style: italic;
 }
-.product p:first-letter {
+.product figure p:first-letter {
 	color: #03c03c;
 	font-size: 26px;
 }
@@ -79,8 +74,8 @@ ul li a:hover {
 	border-color: #cacd58 #5faf8a #b9cea5 #aab238;
 }
 .product_img:hover {
-	border: solid;
-	border-color: #ffffff;
+	border: none;
+	margin: 3px;
 }
 fieldset {
 	border: solid;
@@ -110,15 +105,23 @@ textarea {
 	margin-bottom: 5px;
 }
 p a:visited {
-	color: #228B22;
+	color: #228b22;
 }
 input[type="email"]:focus {
-	color: #000080;
-	background-color: #E0FFFF;
+	color: #0000ff;
+	background-color: #e0ffff;
 }
 input[type="text"],
-textarea:focus {
+textarea {
 	text-transform: capitalize;
+}
+/* ::placeholder с одним двоеточием не работатет!
+Валидацию не проходит, так как этот псевдоэлемент
+есть только в сырой версии спецификации,
+НО ПОДДЕРЖИВАЕТСЯ ВСЕМИ БРАУЗЕРАМИ*/
+input[type="text"]::placeholder,
+textarea::placeholder {
+	text-transform: none;
 }
 table,
 td,
@@ -131,7 +134,7 @@ table {
 td,
 th {
 	width: 150px;
-	height: 40px;
+	height: 30px;
 	text-align: center;
 }
 th {
@@ -142,4 +145,7 @@ td {
 }
 caption {
 	font-size: 18px;
+}
+thead tr{
+	height: 50px;
 }
